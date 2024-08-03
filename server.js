@@ -9,6 +9,7 @@ const errorHandler = require('./middleware/errorHandler');
 const verifyJWT = require('./middleware/verifyJWT');
 const credentials = require('./middleware/credentials');
 const mongoose = require('mongoose');
+const fs = require('fs');
 const cookieParser = require('cookie-parser');
 const connectDB = require('./config/dbConn');
 const PORT = process.env.PORT || 3500;
@@ -45,6 +46,14 @@ app.use('/register', require('./routes/register'));
 app.use('/auth', require('./routes/auth'));
 app.use('/refresh', require('./routes/refresh'));
 app.use('/logout', require('./routes/logout'));
+app.use('/users', require('./routes/api/users'));
+app.use('/posts', (req, res) => {
+    fs.readFile('./data/db.json', (err, data) => {
+        if (err) throw err;
+        let obj = JSON.parse(data);
+        res.json(obj.posts);
+    });
+});
 
 app.use(verifyJWT);
 app.use('/employees', require('./routes/api/employees'));
@@ -65,4 +74,11 @@ app.use(errorHandler)
 mongoose.connection.once('open', () => {
     console.log('Connected to MongoDB');
     app.listen(PORT, () => console.log(`server running on port ${PORT}`));
+
 });
+
+/* app.use(express.json());
+app.post('./posts', (req, res) => {
+    console.log(req.body);
+    res.sendStatus(201).json({ message: 'New post added successfully' });
+}) */

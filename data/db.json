@@ -1,0 +1,40 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "My First Post",
+      "datetime": "March 27, 2024 8:27:03 PM",
+      "body": "Blessed be the name of the Lord for ever and ever. Amen and amen."
+    },
+    {
+      "id": "2",
+      "title": "My 2nd Post",
+      "datetime": "March 24, 2024 07:51:32 AM",
+      "body": "The name of the Lord is a strong tower"
+    },
+    {
+      "id": "3",
+      "title": "My 3rd Post",
+      "datetime": "March 24, 2024 07:52:32 AM",
+      "body": "Oh give thanks unto the Lord"
+    },
+    {
+      "id": "4",
+      "title": "My Fourth Post",
+      "datetime": "March 24, 2024 07:53:32 AM",
+      "body": "Glory be to the Lord Almighty for ever and ever"
+    },
+    {
+      "id": "5",
+      "title": "The name Jesus",
+      "datetime": "April 01, 2024 6:24:54 PM",
+      "body": "The name above every other name"
+    },
+    {
+      "id": "6",
+      "title": "Gratitude",
+      "datetime": "April 01, 2024 8:31:20 PM",
+      "body": "Thank you Lord for the safe delivery of your daughter Rosemary."
+    }
+  ]
+}
